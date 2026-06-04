@@ -9,9 +9,13 @@ description: Use when the user wants to render a markdown article into 微信公
 
 ## 触发流程
 
+0. **判断输入源 (front door, 源无关)**: 核心只渲染 markdown, 但用户的"原始文本"未必是 markdown。
+   - 已是本地 `.md` 文件 → 直接进下一步
+   - 在 Notion / 飞书 / Word / 一段富文本粘贴里 → **先归一化成本地 markdown**: 用你手上的工具 (Notion MCP / 导出 / 直接转写) 把正文转成一个 `.md` 文件存到合适目录, 再继续。**不要**内置任何特定源的拉取逻辑——用你自己 agent 已有的能力。
+
 1. **解析用户意图**, 提取 3 个变量:
    - `markdown_path` — 待渲染的 .md 文件绝对路径
-   - `theme` — 4 选 1 (inherited-{humanist,tech} / fresh-{humanist,tech})
+   - `theme` — 已登记的主题之一 (自带 inherited-{humanist,tech} / fresh-{humanist,tech}; 加上用户用 new-theme 造的任意主题。登记主题 = `docs/wechat-render/references/themes/` 下存在的 `<theme>.html`)
    - `mode` — `initial` (首轮渲染) or `feedback` (基于已有 HTML 的迭代)
 
 2. **theme 推断顺序**:
@@ -38,7 +42,7 @@ description: Use when the user wants to render a markdown article into 微信公
 
 6. **dispatch 完后**告诉用户:
    - 输出文件路径
-   - 一句话提示 "浏览器双击打开预览, 满意后走 SOP 第 8 步手动 Ctrl+A/C/V, 发布完用 `/publish-notion-update` 回填"
+   - 一句话提示 "浏览器双击打开 HTML 预览; 满意后全选复制 (Ctrl+A / Ctrl+C), 粘到公众号草稿箱正文区即可。这一步是手动的——agent 无法替你粘贴。"
    - 不在主会话里读 / 展示 HTML 内容 (太长污染上下文)
 
 ## output_path 计算
@@ -59,4 +63,4 @@ output_path = <markdown_path 所在目录>/<markdown 文件名去掉 .md 后缀>
 - **不要在 validator FAIL 时自动修 article.md** — issue 清单返回用户, 让作者决定怎么改
 - 不要主动展示 HTML 文件内容 — 用户要看就让他自己打开
 - 不要修改 `docs/wechat-render/system-prompt.md` 或 references — 那是 source of truth
-- 不要尝试 push 到公众号 — 仅 markdown→HTML, 发布走 SOP
+- 不要尝试自动发布到公众号 — 职责边界是 markdown→HTML, 发布由用户手动完成
