@@ -34,7 +34,7 @@ Always produce the output as an HTML artifact (so the user can visually preview 
 
 Author preferences (apply by default unless frontmatter overrides):
 
-- **Default signature text**: `Rickie` (frontmatter `signature: false` suppresses entirely; absence of override means use `Rickie`)
+- **Default signature text**: read from `docs/wechat-render/config.md` (`signature:` field; ships as placeholder 「作者」). Per-article frontmatter `signature: <name>` overrides; `signature: false` suppresses entirely. **No personal name is hardcoded anywhere in the kit.**
 - **Metadata card labels (项目元数据卡 / project meta card)**: use natural Chinese labels — `简介` / `时间` / `进度` / `状态` / `架构图`. **Do NOT** use English jargon (`TL;DR`, `META`, `STATUS`, `SUMMARY`, `ACTIVE`, `PROGRESS`) as label text — they're unfriendly to Chinese readers. The value column can still use mono treatment for dates / percentages, but the label noun itself should be Chinese.
 - **`<strong>` color**: render in the theme's primary accent color uniformly (e.g. fresh-tech `rgb(37, 99, 235)`, inherited-tech `#0052FF`, fresh-humanist `rgb(168, 90, 60)`). **Do NOT** alternate between black `<strong>` (for "ordinary emphasis") and colored `<strong>` (for "concept emphasis") within the same article — author preference is uniform color across all bold text.
 - **Punctuation in CJK context (中文标点)**: when rendering, **convert ASCII punctuation to fullwidth Chinese punctuation** whenever it sits between Chinese characters or at sentence boundaries within Chinese text. Conversion table:
@@ -58,6 +58,7 @@ The user picks **one** of 4 themes per article:
 | `inherited-tech` | inherited | tech | 数据复盘 / 理性分析 / 年度总结 |
 | `fresh-humanist` | fresh (fully redesigned) | humanist | 散文 + 想要全新视觉 |
 | `fresh-tech` | fresh | tech | 数据复盘 + 工程师博客风 |
+<!-- THEME-TABLE-END: the new-theme skill inserts new theme rows immediately ABOVE this line -->
 
 For each theme there's a reference HTML in the project knowledge. **Study it as your visual vocabulary** — typography, color palette, decorative elements, primitive structures — and apply that vocabulary to the user's markdown. Don't copy verbatim; draw from it.
 
@@ -104,6 +105,8 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - `$ ai-disclosure --tool=claude` shell-prompt-styled disclosure
 - `§` symbol HR with thin lines on both sides
 - Substack / Stratechery / engineering-blog feel
+
+<!-- THEME-QUICKREF-END: the new-theme skill inserts new theme Quick-Reference blocks immediately ABOVE this line -->
 
 ## Element Vocabulary
 
@@ -152,10 +155,10 @@ Beyond standard markdown elements, the reference HTMLs demonstrate these decorat
 
 ## Brand & Author Identity
 
-- **Author display name (signature)**: `Rickie`
-- All signature blocks (right-aligned at article end) display `Rickie` — **not** `nyxx`, **not** `your-signature.gif`, **not** any other placeholder.
-- The reference HTMLs still contain `nyxx` from earlier brand iteration — **ignore that and use `Rickie` always**.
-- If frontmatter `signature: false`, suppress signature block entirely.
+- **Author display name (signature)**: from `config.md` `signature:` (default placeholder 「作者」), overridable per-article via frontmatter `signature: <name>`.
+- All signature blocks (right-aligned at article end) display the configured signature.
+- If frontmatter `signature: false`, suppress the signature block entirely.
+- The kit ships brand-neutral — no hardcoded personal name. The `inherited-*` themes are shipped as **example** personalized themes; their accent color (e.g. the blue `#0052FF`) is an example — replace with your own when you adopt them.
 
 ## Project Metadata Card (when article has multi-project survey structure)
 
