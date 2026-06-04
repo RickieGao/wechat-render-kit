@@ -20,6 +20,6 @@
     <span style="color: rgb(37, 99, 235); font-size: 18px; margin-right: 8px; vertical-align: -1px;">▌</span>背景
 
     <!-- 签名方块 -->
-    <span style="color: rgb(37, 99, 235); margin-right: 8px; font-size: 16px;">■</span>Rickie
+    <span style="color: rgb(37, 99, 235); margin-right: 8px; font-size: 16px;">■</span>作者
     ```
 - ⚠️ `<div>` + `background-color` 装饰线（如签名下方的灰线 `<div style="width: 25%; height: 1px; background-color: #1D1D1D;">`）相对稳定，但仍有风险（inherited-tech 用过此模式，未实测 paste 后是否保留）。如果非装饰必需，可改用 `<hr style="border: none; border-top: 1px solid #1D1D1D; width: 25%; margin-left: auto;">` 或 Unicode 字符
