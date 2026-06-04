@@ -1,0 +1,6 @@
+# rendered output — never commit
+*-formatted.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
