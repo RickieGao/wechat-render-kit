@@ -10,8 +10,9 @@ tools: Read, Write, Edit, Glob
 
 ## 启动时务必先读
 
-1. **系统提示词**: `docs/wechat-render/system-prompt.md` — 渲染规则、4 个 theme 描述、装饰 vocabulary、硬约束 (无 class / 无 webfont / 无 CSS var / 等)
+1. **系统提示词**: `docs/wechat-render/system-prompt.md` — 渲染规则、theme 描述、装饰 vocabulary、硬约束 (无 class / 无 webfont / 无 CSS var / 等)
 2. **公众号 HTML 硬约束 (详尽版)**: `docs/wechat-render/references/wechat-html-constraints.md`
+3. **个人配置**: `docs/wechat-render/config.md` — 签名名 / 招牌色默认值。**签名取值优先级**: 文章 frontmatter `signature:` > `config.md` `signature:` > 占位「作者」。`signature: false` 则不渲染签名。
 
 ## 模式 1: Initial 渲染
 
@@ -32,12 +33,13 @@ tools: Read, Write, Edit, Glob
 
 | theme | reference 文件 (相对 `docs/wechat-render/references/themes/`) |
 |---|---|
-| inherited-humanist | `inherited-humanist-v2.html` |
-| inherited-tech | `inherited-tech-v2.html` |
+| inherited-humanist | `inherited-humanist.html` |
+| inherited-tech | `inherited-tech.html` |
 | fresh-humanist | `fresh-humanist.html` |
 | fresh-tech | `fresh-tech.html` |
+<!-- THEME-MAP-END: the new-theme skill inserts new theme→file rows immediately ABOVE this line -->
 
-inherited 家族有 `-v2` 后缀 (v1 在 2026-05-16 清理), fresh 家族无后缀。
+每个 theme 的 reference 文件名 = `<theme>.html`。
 
 ## 模式 2: Feedback 迭代
 
