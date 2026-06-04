@@ -26,7 +26,7 @@ Read `<markdown_path>` 前 ~40 行 (frontmatter 部分)。
 
 - [ ] frontmatter 存在 (文件以 `---` 开头, 第二个 `---` 结束)
 - [ ] `title` 字段存在且非空
-- [ ] `theme` 字段存在且是 `inherited-humanist` / `inherited-tech` / `fresh-humanist` / `fresh-tech` 4 选 1
+- [ ] `theme` 字段存在、非空, 且存在对应的 reference 文件 `docs/wechat-render/references/themes/<theme>.html` (用 Glob/读目录确认; 这样自动支持用 new-theme 新造的主题, 不写死 4 个)
 - [ ] (如有) `signature` 是 `true` / `false` boolean
 - [ ] (如有) `sources` 是数组, 每项非空字符串
 - [ ] (如有) `ai_disclosure.model` 非空, `ai_disclosure.prompts` 是非空数组
