@@ -64,7 +64,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 
 ## Theme Quick Reference
 
-**inherited-humanist** (ref: `inherited-humanist-v2.html`)
+**inherited-humanist** (ref: `inherited-humanist.html`)
 - Main font: full **serif** (Georgia + Songti SC)
 - H1 centered, with italic serif subtitle (author · season)
 - Drop cap on lead paragraph (large warm-orange first character, floated)
@@ -73,7 +73,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - Asterism `· · ·` replacing `<hr>`
 - Books-page feel; calm; lots of breathing room
 
-**inherited-tech** (ref: `inherited-tech-v2.html`)
+**inherited-tech** (ref: `inherited-tech.html`)
 - Main font: **sans** (PingFang SC system stack)
 - H1 left-aligned, italic serif single-line subtitle in warm-clay
 - mono meta bar at top (`2026.01.14 · HEALTH · DATA · Q4`)
