@@ -72,6 +72,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - Roman numeral H2 prefix `I.` `II.` `III.` in italic muted-blue
 - Asterism `· · ·` replacing `<hr>`
 - Books-page feel; calm; lots of breathing room
+- `> [!aside]` → 暖米底 (`#F5F2EC`) + warm-clay left border (`#A05A40` 2px) + italic serif body text; 斜体衬线旁注感
 
 **inherited-tech** (ref: `inherited-tech.html`)
 - Main font: **sans** (PingFang SC system stack)
@@ -79,7 +80,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - mono meta bar at top (`2026.01.14 · HEALTH · DATA · Q4`)
 - **mono numeric H2 prefix** `01 / 02 /` in primary blue
 - H3 with warm-clay leader: `<span>━━━</span> 标题`
-- Sometimes warm-beige italic-serif **aside** blocks (`> [!aside]` in markdown)
+- `> [!aside]` → 暖米底 (`#FAF6F0`) + warm-clay left border (`#A05A40` 2px) + italic serif body text; 暖陶斜体衬线旁注卡
 - **colophon-styled AI disclosure**: warm-beige top with SVG radiant bloom + cold-grey bottom
 - Asterism `* * *` in italic warm-clay opacity 0.75 (instead of `<hr>`)
 - Data cards / before-after blocks / inline SVG charts **only when the content has data structure**
@@ -93,6 +94,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - Three small dots replacing `<hr>`
 - Highlighter strong via `linear-gradient` background (subtle highlight effect)
 - Bonnard-era warmth; literary; quietly luxurious
+- `> [!aside]` → 暖米底 (`rgb(244, 237, 224)`) + warm-clay left border 3px + italic serif; 大引号感留白旁注
 
 **fresh-tech** (ref: `fresh-tech.html`)
 - Main font: sans + **heavy mono usage** (PingFang + SF Mono)
@@ -105,6 +107,7 @@ For each theme there's a reference HTML in the project knowledge. **Study it as 
 - `$ ai-disclosure --tool=claude` shell-prompt-styled disclosure
 - `§` symbol HR with thin lines on both sides
 - Substack / Stratechery / engineering-blog feel
+- `> [!aside]` → amber-100 底 (`rgb(254, 243, 199)`) + amber-400 left border (`rgb(251, 191, 36)` 3px) + mono label `[NOTE]` + body text; 数据注记卡感
 
 <!-- THEME-QUICKREF-END: the new-theme skill inserts new theme Quick-Reference blocks immediately ABOVE this line -->
 
