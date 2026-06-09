@@ -33,7 +33,7 @@
 若你已在本仓库内 (本文件就在仓库根目录), 直接用当前目录的文件, 无需再 clone。若你是从外部链接来的, 先把仓库 clone 到临时目录:
 
 ```bash
-git clone <repo-url> /tmp/wechat-render-kit
+git clone https://github.com/RickieGao/wechat-render-kit.git /tmp/wechat-render-kit
 ```
 
 然后从 `/tmp/wechat-render-kit/` 按下方清单拷贝。

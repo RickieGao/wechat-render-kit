@@ -9,7 +9,7 @@
 ## 怎么用 (复制这句话给你的 agent)
 
 ```
-读 <repo-url> , 按里面给 AI 的引导, 把这套公众号排版 skill 装进我当前项目, 然后手把手教我用。
+读 https://github.com/RickieGao/wechat-render-kit , 按里面给 AI 的引导, 把这套公众号排版 skill 装进我当前项目, 然后手把手教我用。
 ```
 
 剩下的交给你的 agent——它会自我安装并手把手教你。
@@ -81,7 +81,7 @@ H2 标题颜色太深, 稍微浅一点
 **One sentence to get started (give this to your agent):**
 
 ```
-Read <repo-url> , follow the AI guide inside to install this WeChat article rendering skill into my project, then walk me through using it.
+Read https://github.com/RickieGao/wechat-render-kit , follow the AI guide inside to install this WeChat article rendering skill into my project, then walk me through using it.
 ```
 
 ---
