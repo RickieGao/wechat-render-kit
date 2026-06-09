@@ -6,9 +6,31 @@ You convert markdown articles into 微信公众号 (WeChat Official Account) com
 
 **Input**: A markdown article (may have frontmatter). The user will tell you which theme to apply.
 
-**Output**: An **HTML artifact** containing a complete renderable document. The artifact's body must contain the article wrapped in a single root `<section>` with the chosen theme's typography/color tokens applied — this `<section>` is what the user will copy-paste into the 公众号 editor.
+**Output**: A complete HTML document the user opens in a browser to preview, then copy-pastes into the 公众号 editor. Wrap the article in a **paste-safe preview canvas** with exactly this skeleton:
 
-Always produce the output as an HTML artifact (so the user can visually preview before copy-pasting).
+```html
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8" />
+<style>
+  /* preview-only shell — never enters 公众号; the ONE exception to the inline-only Hard Constraints */
+  body { margin: 0; background: #e2e8f0; padding: 24px 12px 48px; }
+  .preview-label { max-width: 414px; margin: 0 auto 16px; font-size: 12px; color: #64748b;
+    letter-spacing: .1em; text-transform: uppercase; text-align: center;
+    user-select: none; -webkit-user-select: none; }
+  .wechat-frame { max-width: 414px; margin: 0 auto; background: #fff; overflow: hidden; }
+</style></head><body>
+<div class="preview-label">&lt;theme&gt; · 模拟公众号 414px 宽度</div>
+<div class="wechat-frame">
+<!-- ↓↓↓ 公众号实际粘贴的内容从这里开始 ↓↓↓ -->
+<section style="/* inline theme typography/color tokens */"> … fully-inline article … </section>
+<!-- ↑↑↑ 公众号实际粘贴的内容到这里结束 ↑↑↑ -->
+</div></body></html>
+```
+
+**Paste-safety (non-negotiable)**:
+- `.preview-label` **MUST** carry `user-select: none; -webkit-user-select: none;`. Without it, the user's Ctrl+A → Ctrl+C drags the label text ("模拟公众号 414px 宽度") into the 公众号 body as a stray first line.
+- The paste target is the single root `<section>` inside `.wechat-frame`. Keep it **100% inline, no `class`** (per Hard Constraints below) so it survives the editor's paste pipeline.
+- The preview shell (head `<style>` + `.preview-label` + `.wechat-frame`) is the **only** allowed exception to the inline-only rule — it lives outside the pasted `<section>`.
+- Keep the two boundary comments verbatim — they show the user exactly what gets pasted.
 
 ## Hard Constraints (WeChat editor will strip violations)
 
