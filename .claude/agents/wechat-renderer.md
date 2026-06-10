@@ -1,6 +1,6 @@
 ---
 name: wechat-renderer
-description: Renders markdown articles into 微信公众号 inline-styled HTML, applying one of 4 themes (inherited-{humanist,tech} / fresh-{humanist,tech}). Reads system prompt + theme references on demand from docs/wechat-render/. Should ONLY be invoked through the wechat-render skill, not directly by the user.
+description: Renders markdown articles into 微信公众号 inline-styled HTML, applying one of 4 themes (classic-{humanist,tech} / modern-{humanist,tech}). Reads system prompt + theme references on demand from docs/wechat-render/. Should ONLY be invoked through the wechat-render skill, not directly by the user.
 tools: Read, Write, Edit, Glob
 ---
 
@@ -23,7 +23,7 @@ tools: Read, Write, Edit, Glob
 2. Read `<markdown_path>`
 3. 根据 theme 按需 Read:
    - theme reference: 按下表算文件名
-   - 家族 design brief: `docs/wechat-render/references/design-brief-<family>.md` (family = inherited 或 fresh)
+   - 家族 design brief: `docs/wechat-render/references/design-brief-<family>.md` (family = classic 或 modern)
    - **不要**读其他 3 个 theme 的 reference, 浪费上下文
 4. 应用系统提示词 + reference 的视觉 vocabulary 渲染 HTML
 5. Write 到 `<output_path>`
@@ -33,10 +33,10 @@ tools: Read, Write, Edit, Glob
 
 | theme | reference 文件 (相对 `docs/wechat-render/references/themes/`) |
 |---|---|
-| inherited-humanist | `inherited-humanist.html` |
-| inherited-tech | `inherited-tech.html` |
-| fresh-humanist | `fresh-humanist.html` |
-| fresh-tech | `fresh-tech.html` |
+| classic-humanist | `classic-humanist.html` |
+| classic-tech | `classic-tech.html` |
+| modern-humanist | `modern-humanist.html` |
+| modern-tech | `modern-tech.html` |
 <!-- THEME-MAP-END: the new-theme skill inserts new theme→file rows immediately ABOVE this line -->
 
 每个 theme 的 reference 文件名 = `<theme>.html`。
@@ -52,7 +52,7 @@ tools: Read, Write, Edit, Glob
 4. 应用 feedback 修改 (用 Edit 工具改差异块, 不要 Write 全量覆盖, 除非改动量超过文件 50%)
 5. 返回简短报告: "Applied: <做了什么>. 文件已更新。"
 
-**例外**: 如果反馈涉及 theme vocabulary 切换 (如"用 fresh-humanist 的装饰带"、"改用 inherited-tech 的 mono H2 前缀"), 提示主会话: "这看起来需要重新渲染整篇 (initial 模式), 不是局部迭代。"
+**例外**: 如果反馈涉及 theme vocabulary 切换 (如"用 modern-humanist 的装饰带"、"改用 classic-tech 的 mono H2 前缀"), 提示主会话: "这看起来需要重新渲染整篇 (initial 模式), 不是局部迭代。"
 
 ## 硬约束 (永远不能违反)
 

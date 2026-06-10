@@ -9,7 +9,7 @@
 - ⚠️ 公众号编辑器粘贴时会清除 `<script>` 和大部分 `<style>` 标签 → 100% inline 没问题
 - ✅ 颜色用 `rgb()` 或 `#hex`，避免 `var(--)`（公众号会清除 CSS 变量）
 - ⚠️ 中文加粗用 `<strong>` 而不是 `<b>`，避免被微信编辑器额外处理
-- ❌ **空 `<span>` + `display: inline-block` + `width/height` + `background-color`** 模拟的装饰条 / 方块，公众号 paste 会 strip 掉（实测 2026-05-25 fresh-tech 版本的 H3 leader bar 和签名前蓝方块都丢失）。**正确做法：用 Unicode 字符 + `color`**：
+- ❌ **空 `<span>` + `display: inline-block` + `width/height` + `background-color`** 模拟的装饰条 / 方块，公众号 paste 会 strip 掉（实测 2026-05-25 modern-tech 版本的 H3 leader bar 和签名前蓝方块都丢失）。**正确做法：用 Unicode 字符 + `color`**：
   - **竖向短杠（首选 H3 leader / inline marker）** → `▌` (U+258C, 推荐) / `▎` (U+258E, 更细) / `┃` (U+2503) + `color: <accent>; font-size: 18px; vertical-align: -1px; margin-right: 8px`
   - 横向短杠（慎用 — `━━` 视觉"飘"像水平线，不像小标记）→ `━` / `━━` + `color: <accent>; font-weight: 700; letter-spacing: -0.15em`
   - **实心方块（签名 / 列表 marker）** → `■` (U+25A0, 推荐) / `▪` (U+25AA, 更小) + `color: <accent>; font-size: 16px; margin-right: 8px`
@@ -22,4 +22,4 @@
     <!-- 签名方块 -->
     <span style="color: rgb(37, 99, 235); margin-right: 8px; font-size: 16px;">■</span>作者
     ```
-- ⚠️ `<div>` + `background-color` 装饰线（如签名下方的灰线 `<div style="width: 25%; height: 1px; background-color: #1D1D1D;">`）相对稳定，但仍有风险（inherited-tech 用过此模式，未实测 paste 后是否保留）。如果非装饰必需，可改用 `<hr style="border: none; border-top: 1px solid #1D1D1D; width: 25%; margin-left: auto;">` 或 Unicode 字符
+- ⚠️ `<div>` + `background-color` 装饰线（如签名下方的灰线 `<div style="width: 25%; height: 1px; background-color: #1D1D1D;">`）相对稳定，但仍有风险（classic-tech 用过此模式，未实测 paste 后是否保留）。如果非装饰必需，可改用 `<hr style="border: none; border-top: 1px solid #1D1D1D; width: 25%; margin-left: auto;">` 或 Unicode 字符

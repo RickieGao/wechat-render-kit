@@ -1,6 +1,6 @@
 ---
 name: wechat-render
-description: Use when the user wants to render a markdown article into 微信公众号 inline-styled HTML, with explicit theme choice (inherited-humanist/inherited-tech/fresh-humanist/fresh-tech). Triggers on phrases like "渲染 article.md", "用 inherited-tech 转微信", "把这篇出 HTML". Dispatches markdown-checklist-validator (strict pre-check) + wechat-renderer subagent to keep the main session context clean.
+description: Use when the user wants to render a markdown article into 微信公众号 inline-styled HTML, with explicit theme choice (classic-humanist/classic-tech/modern-humanist/modern-tech). Triggers on phrases like "渲染 article.md", "用 classic-tech 转微信", "把这篇出 HTML". Dispatches markdown-checklist-validator (strict pre-check) + wechat-renderer subagent to keep the main session context clean.
 ---
 
 # wechat-render
@@ -15,7 +15,7 @@ description: Use when the user wants to render a markdown article into 微信公
 
 1. **解析用户意图**, 提取 3 个变量:
    - `markdown_path` — 待渲染的 .md 文件绝对路径
-   - `theme` — 已登记的主题之一 (自带 inherited-{humanist,tech} / fresh-{humanist,tech}; 加上用户用 new-theme 造的任意主题。登记主题 = `docs/wechat-render/references/themes/` 下存在的 `<theme>.html`)
+   - `theme` — 已登记的主题之一 (自带 classic-{humanist,tech} / modern-{humanist,tech}; 加上用户用 new-theme 造的任意主题。登记主题 = `docs/wechat-render/references/themes/` 下存在的 `<theme>.html`)
    - `mode` — `initial` (首轮渲染) or `feedback` (基于已有 HTML 的迭代)
 
 2. **theme 推断顺序**:

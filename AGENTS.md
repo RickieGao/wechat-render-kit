@@ -53,14 +53,14 @@ git clone https://github.com/RickieGao/wechat-render-kit.git /tmp/wechat-render-
 | `docs/wechat-render/markdown-checklist.md` | `docs/wechat-render/markdown-checklist.md` |
 | `docs/wechat-render/config.md` | `docs/wechat-render/config.md` |
 | `docs/wechat-render/references/wechat-html-constraints.md` | `docs/wechat-render/references/wechat-html-constraints.md` |
-| `docs/wechat-render/references/design-brief-fresh.md` | `docs/wechat-render/references/design-brief-fresh.md` |
-| `docs/wechat-render/references/design-brief-inherited.md` | `docs/wechat-render/references/design-brief-inherited.md` |
+| `docs/wechat-render/references/design-brief-modern.md` | `docs/wechat-render/references/design-brief-modern.md` |
+| `docs/wechat-render/references/design-brief-classic.md` | `docs/wechat-render/references/design-brief-classic.md` |
 | `docs/wechat-render/references/style-dna-extracted.md` | `docs/wechat-render/references/style-dna-extracted.md` |
 | `docs/wechat-render/references/theme-brief-template.md` | `docs/wechat-render/references/theme-brief-template.md` |
-| `docs/wechat-render/references/themes/fresh-humanist.html` | `docs/wechat-render/references/themes/fresh-humanist.html` |
-| `docs/wechat-render/references/themes/fresh-tech.html` | `docs/wechat-render/references/themes/fresh-tech.html` |
-| `docs/wechat-render/references/themes/inherited-humanist.html` | `docs/wechat-render/references/themes/inherited-humanist.html` |
-| `docs/wechat-render/references/themes/inherited-tech.html` | `docs/wechat-render/references/themes/inherited-tech.html` |
+| `docs/wechat-render/references/themes/modern-humanist.html` | `docs/wechat-render/references/themes/modern-humanist.html` |
+| `docs/wechat-render/references/themes/modern-tech.html` | `docs/wechat-render/references/themes/modern-tech.html` |
+| `docs/wechat-render/references/themes/classic-humanist.html` | `docs/wechat-render/references/themes/classic-humanist.html` |
+| `docs/wechat-render/references/themes/classic-tech.html` | `docs/wechat-render/references/themes/classic-tech.html` |
 
 ### 自主但透明 + 幂等
 
@@ -77,12 +77,12 @@ git clone https://github.com/RickieGao/wechat-render-kit.git /tmp/wechat-render-
 
 用内置示例文章跑一次完整渲染, 验证安装是否正确:
 
-对用户说: 「我来用 `fresh-tech` 主题渲染示例文章, 验证安装。」
+对用户说: 「我来用 `modern-tech` 主题渲染示例文章, 验证安装。」
 
 然后触发渲染:
 
 ```
-用 fresh-tech 渲染 examples/sample-article/article.md
+用 modern-tech 渲染 examples/sample-article/article.md
 ```
 
 渲染完成后, 告诉用户:
@@ -104,18 +104,18 @@ git clone https://github.com/RickieGao/wechat-render-kit.git /tmp/wechat-render-
 用 <主题名> 渲染 <你的文章.md>
 ```
 
-例如: `用 fresh-tech 渲染 2026-06_my-article/article.md`
+例如: `用 modern-tech 渲染 2026-06_my-article/article.md`
 
 ### 4 个内置主题
 
 | 主题 | 一句话 | 说明 |
 |---|---|---|
-| `inherited-humanist` | 感性书页风, 衬线字体 + 暖橙首字下沉 | 个性化范例 (含示例 DNA), 散文 / 回忆 / 感性表达 |
-| `inherited-tech` | 理性分析风, 招牌蓝 + mono 章节编号 | 个性化范例 (含示例 DNA), 数据复盘 / 年度总结 |
-| `fresh-humanist` | 全新书页感, 暖赭主色 + 柔暖底色 | 品牌中性, 散文 + 想要全新视觉 |
-| `fresh-tech` | 全新工程博客风, Tailwind 配色 + 深色代码块 | 品牌中性, 技术文章 / 工程师博客 |
+| `classic-humanist` | 感性书页风, 衬线字体 + 暖橙首字下沉 | 个性化范例 (含示例 DNA), 散文 / 回忆 / 感性表达 |
+| `classic-tech` | 理性分析风, 招牌蓝 + mono 章节编号 | 个性化范例 (含示例 DNA), 数据复盘 / 年度总结 |
+| `modern-humanist` | 全新书页感, 暖赭主色 + 柔暖底色 | 品牌中性, 散文 + 想要全新视觉 |
+| `modern-tech` | 全新工程博客风, Tailwind 配色 + 深色代码块 | 品牌中性, 技术文章 / 工程师博客 |
 
-`inherited-*` 两个主题是个性化范例: 它们展示了如何把某个公众号的品牌色和字体习惯注入主题, 但**招牌色是示例色**, 你自己的公众号应该换成自己的配色 (见下方配置)。
+`classic-*` 两个主题是个性化范例: 它们展示了如何把某个公众号的品牌色和字体习惯注入主题, 但**招牌色是示例色**, 你自己的公众号应该换成自己的配色 (见下方配置)。
 
 ### 渲染前的严格校验
 
@@ -150,8 +150,8 @@ git clone https://github.com/RickieGao/wechat-render-kit.git /tmp/wechat-render-
 
 对我说「造个新主题」就能触发。有两条路径:
 
-- **fresh 路径**: 从零 brief 设计全新风格——你描述感觉 (参考刊物 / 配色情绪 / 字体倾向), 我来出设计。
-- **inherited 路径**: 从你旧公众号的文章 HTML 里提取 DNA, 把你已有的视觉语言精化成可复用的主题。
+- **modern 路径**: 从零 brief 设计全新风格——你描述感觉 (参考刊物 / 配色情绪 / 字体倾向), 我来出设计。
+- **classic 路径**: 从你旧公众号的文章 HTML 里提取 DNA, 把你已有的视觉语言精化成可复用的主题。
 
 新主题会自动登记到渲染系统, 之后直接 `用 <新主题名> 渲染 article.md` 即可使用。
 

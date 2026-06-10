@@ -1,4 +1,4 @@
-# Design Brief — inherited 家族（Claude Design 输入 A）
+# Design Brief — classic 家族（Claude Design 输入 A）
 
 > 把以下整段喂给你的 AI / 设计工具，并附上你填好的 `style-dna-extracted.md` 内容作为视觉锚点。
 
@@ -55,7 +55,7 @@
 
 ---
 
-## Design Brief — 「inherited」家族
+## Design Brief — 「classic」家族
 
 **家族定位**：**继承 + 优化**。这是一次"工艺级精化"，不是重塑。需要保留你原有公众号已经形成的视觉 DNA，让长期读者一眼就能认出还是你的号，同时把每个组件的细节做到最优。
 
@@ -71,12 +71,12 @@
 
 **两个主题的差异化**（在保留 DNA 基础上）：
 
-- **`inherited-humanist`**：
+- **`classic-humanist`**：
   - 字体倾向衬线（标题用思源宋体）
   - 配色在保留招牌蓝的基础上加暖橘 / 雾蓝点缀
   - 段落节奏放慢、留白增加
   - 画作引用更书页感
-- **`inherited-tech`**：
+- **`classic-tech`**：
   - 字体严格无衬线
   - 配色克制（招牌蓝保留为重点强调色，主色用沉稳蓝或纯灰阶）
   - 增加数据卡片 / 对比块 / 表格美化（这些是新增组件，DNA 里没有，但贴合理性内容）

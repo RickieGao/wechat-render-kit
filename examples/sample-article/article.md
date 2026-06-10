@@ -1,6 +1,6 @@
 ---
 title: 示例文章 — 一次关于工具与心流的随想
-theme: fresh-tech
+theme: modern-tech
 signature: 作者
 sources:
   - "《深度工作》| Cal Newport"

@@ -26,12 +26,12 @@ agents 请读 [`AGENTS.md`](AGENTS.md)。
 
 | 主题 | 风格一句话 | 适用场景 |
 |---|---|---|
-| `fresh-humanist` | 全新书页感, 暖赭主色 + 柔暖米底 | 散文 / 随笔 / 感性表达, 想要全新视觉风格 |
-| `fresh-tech` | 全新工程博客风, Tailwind 配色 + 深色代码块 | 技术文章 / 工程师博客 / 数据分析 |
-| `inherited-humanist` | 感性书页风, 衬线字体 + 暖橙首字下沉 | 散文 / 回忆录 / 感性表达 (个性化范例, 含示例 DNA) |
-| `inherited-tech` | 理性分析风, 招牌蓝 + mono 章节编号 | 数据复盘 / 年度总结 / 理性分析 (个性化范例, 含示例 DNA) |
+| `modern-humanist` | 全新书页感, 暖赭主色 + 柔暖米底 | 散文 / 随笔 / 感性表达, 想要全新视觉风格 |
+| `modern-tech` | 全新工程博客风, Tailwind 配色 + 深色代码块 | 技术文章 / 工程师博客 / 数据分析 |
+| `classic-humanist` | 感性书页风, 衬线字体 + 暖橙首字下沉 | 散文 / 回忆录 / 感性表达 (个性化范例, 含示例 DNA) |
+| `classic-tech` | 理性分析风, 招牌蓝 + mono 章节编号 | 数据复盘 / 年度总结 / 理性分析 (个性化范例, 含示例 DNA) |
 
-`inherited-*` 两个主题是**个性化范例**: 它们展示了如何把某个公众号的品牌色和视觉习惯注入主题。招牌色是示例色——用 `/new-theme` (inherited 路径) 换成你自己的 DNA。
+`classic-*` 两个主题是**个性化范例**: 它们展示了如何把某个公众号的品牌色和视觉习惯注入主题。招牌色是示例色——用 `/new-theme` (classic 路径) 换成你自己的 DNA。
 
 ---
 
@@ -39,8 +39,8 @@ agents 请读 [`AGENTS.md`](AGENTS.md)。
 
 不满足于 4 个内置主题? 有两条路:
 
-- **fresh 路径**: 从零 brief 设计全新风格——你描述感觉 (参考刊物 / 配色 / 字体倾向), agent 出设计。
-- **inherited 路径**: 把你旧公众号的视觉 DNA 提炼成可复用主题, 延续既有品牌。
+- **modern 路径**: 从零 brief 设计全新风格——你描述感觉 (参考刊物 / 配色 / 字体倾向), agent 出设计。
+- **classic 路径**: 把你旧公众号的视觉 DNA 提炼成可复用主题, 延续既有品牌。
 
 详见 [GENERATING-THEMES.md](GENERATING-THEMES.md) 和 `/new-theme` skill。
 
@@ -49,10 +49,10 @@ agents 请读 [`AGENTS.md`](AGENTS.md)。
 ## 对 AI 说这些就行 (prompt 速查)
 
 ```
-用 fresh-tech 渲染 my-article/article.md
+用 modern-tech 渲染 my-article/article.md
 ```
 ```
-用 fresh-humanist 和 inherited-tech 渲染同一篇, 我要对比两个主题效果
+用 modern-humanist 和 classic-tech 渲染同一篇, 我要对比两个主题效果
 ```
 ```
 H2 标题颜色太深, 稍微浅一点
@@ -76,7 +76,7 @@ H2 标题颜色太深, 稍微浅一点
 
 ## English
 
-`wechat-render-kit` is an AI-agent skill pack that converts markdown articles into inline-styled HTML ready for WeChat Official Accounts. It ships with 4 curated themes (humanist / tech × fresh / inherited), a `/new-theme` skill to generate custom styles, and a strict pre-render markdown validator. No code to run — your AI agent installs the skills into your project and guides you through every step.
+`wechat-render-kit` is an AI-agent skill pack that converts markdown articles into inline-styled HTML ready for WeChat Official Accounts. It ships with 4 curated themes (humanist / tech × classic / modern), a `/new-theme` skill to generate custom styles, and a strict pre-render markdown validator. No code to run — your AI agent installs the skills into your project and guides you through every step.
 
 **One sentence to get started (give this to your agent):**
 

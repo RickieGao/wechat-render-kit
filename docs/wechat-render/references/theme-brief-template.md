@@ -1,6 +1,6 @@
 # 新主题设计 Brief 模板
 
-把这份 brief 填完后，交给 `/new-theme` 的 **fresh 路径**（或直接对话里逐项回答），让 theme-designer 为你生成一套全新的公众号主题。
+把这份 brief 填完后，交给 `/new-theme` 的 **modern 路径**（或直接对话里逐项回答），让 theme-designer 为你生成一套全新的公众号主题。
 
 > **用时估计**：约 2 分钟。全部字段都有说明，没把握的字段可以留空或写"不限"。
 
@@ -11,8 +11,8 @@
 **主题名** `主题名`
 - 请填：kebab-case 小写短横线格式，例如 `mono-editorial`、`warm-ink`、`nordic-data`。这是主题文件名，不可含空格或中文。
 
-**family** `fresh 全新设计 / inherited 继承你旧号 DNA`
-- 请填：本模板适用 **fresh**（从零设计）。如果你想继承现有号风格，请走 `/new-theme` 的 inherited 路径，该路径不需要此模板。
+**family** `modern 全新设计 / classic 继承你旧号 DNA`
+- 请填：本模板适用 **modern**（从零设计）。如果你想继承现有号风格，请走 `/new-theme` 的 classic 路径，该路径不需要此模板。
 
 **基调 tone** `humanist 偏感性书页感 / tech 偏理性几何感`
 - 请填：内容以散文 / 回忆录 / 感性表达为主 → `humanist`；以数据复盘 / 工程博客 / 理性分析为主 → `tech`；两者兼有可以写"偏 humanist"或"偏 tech"。
@@ -70,7 +70,7 @@
 6. `quote-block` — 引用块
 7. `sources` — 文末「想法出处」块（非正式参考文献，谦逊语气）
 
-详细覆盖要求见 `docs/wechat-render/references/design-brief-fresh.md`。
+详细覆盖要求见 `docs/wechat-render/references/design-brief-modern.md`。
 
 ---
 
@@ -80,7 +80,7 @@
 
 ```
 主题名：mono-editorial
-family：fresh
+family：modern
 基调 tone：tech（偏理性）
 
 参考刊物：Stratechery、Ribbon Farm

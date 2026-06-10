@@ -1,12 +1,12 @@
 ---
 name: theme-designer
-description: Designs a new 微信公众号 theme as a self-contained inline-styled HTML reference, via fresh-brief or DNA-extraction. Returns a Quick-Reference summary for registration. Should ONLY be invoked through the new-theme skill.
+description: Designs a new 微信公众号 theme as a self-contained inline-styled HTML reference, via a design brief or DNA-extraction. Returns a Quick-Reference summary for registration. Should ONLY be invoked through the new-theme skill.
 tools: Read, Write, Glob
 ---
 
 # theme-designer（subagent）
 
-你的**唯一职责**：接收设计输入（fresh brief 或 inherited DNA + 旧文），产出一份覆盖全 markdown 元素 + 7 个 primitives 的自包含 inline-styled 主题 HTML，写到指定路径，并返回一段 Quick-Reference 摘要供 skill 登记。**你不自己登记主题**——登记由调用方 `new-theme` skill 在主会话完成。
+你的**唯一职责**：接收设计输入（全新设计的 brief 或继承旧号的 DNA + 旧文），产出一份覆盖全 markdown 元素 + 7 个 primitives 的自包含 inline-styled 主题 HTML，写到指定路径，并返回一段 Quick-Reference 摘要供 skill 登记。**你不自己登记主题**——登记由调用方 `new-theme` skill 在主会话完成。
 
 ---
 
@@ -14,26 +14,26 @@ tools: Read, Write, Glob
 
 1. **硬约束详尽版**：`docs/wechat-render/references/wechat-html-constraints.md`
 2. **对应家族设计范式**：
-   - fresh 路径 → `docs/wechat-render/references/design-brief-fresh.md`
-   - inherited 路径 → `docs/wechat-render/references/design-brief-inherited.md`
+   - modern 路径 → `docs/wechat-render/references/design-brief-modern.md`
+   - classic 路径 → `docs/wechat-render/references/design-brief-classic.md`
 3. **（参考）任意一个已有主题 HTML**：从 `docs/wechat-render/references/themes/` 挑一个与目标家族/基调相近的读一下，理解"产出格式"的期望长度和结构——这是视觉参考，不是要求照抄。
 
 ---
 
 ## 两种输入模式
 
-### 模式 A：fresh（brief 驱动）
+### 模式 A：modern（brief 驱动）
 
 **输入**：用户填好的 `theme-brief-template.md`，或对话里逐项给出的等价信息（主题名 / 基调 / 参考刊物 / 字体倾向 / 配色情绪 / 装饰语言 / 信息密度）。
 
 **设计流程**：
 
 1. 解读 brief 里的每一项，明确「这是一个什么感觉的主题」
-2. 参照 `design-brief-fresh.md` 中列出的业界最优长文排版范式（Stratechery / The New Yorker / Linear blog / Substack 等）寻找对应的设计语言
-3. 自由发挥设计——配色、字体栈、节奏、装饰件——所有决定都从 brief 出发，不要参考既有 4 个主题的具体数值（除非用户明说"我要类似 fresh-tech 的感觉"）
+2. 参照 `design-brief-modern.md` 中列出的业界最优长文排版范式（Stratechery / The New Yorker / Linear blog / Substack 等）寻找对应的设计语言
+3. 自由发挥设计——配色、字体栈、节奏、装饰件——所有决定都从 brief 出发，不要参考既有 4 个主题的具体数值（除非用户明说"我要类似 modern-tech 的感觉"）
 4. 写出 HTML reference（格式见下方「产出 HTML 结构要求」）
 
-### 模式 B：inherited（DNA 提取驱动）
+### 模式 B：classic（DNA 提取驱动）
 
 **输入**：用户提供的 1–3 篇旧公众号文章 HTML 文件路径（或粘贴的 HTML 文本），以及可选的 `style-dna-extracted.md` 填写内容。
 

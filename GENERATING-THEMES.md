@@ -1,6 +1,6 @@
 # 生成新主题
 
-本仓库内置 4 个主题 (`inherited-humanist` / `inherited-tech` / `fresh-humanist` / `fresh-tech`)。你可以按需新增主题——本文说明两条路径以及如何把新主题登记到渲染系统。
+本仓库内置 4 个主题 (`classic-humanist` / `classic-tech` / `modern-humanist` / `modern-tech`)。你可以按需新增主题——本文说明两条路径以及如何把新主题登记到渲染系统。
 
 ---
 
@@ -8,8 +8,8 @@
 
 | 路径 | 何时选 | 输入 |
 |---|---|---|
-| **fresh** (全新设计) | 想要与现有主题完全不同的视觉风格 | 填写 `theme-brief-template.md` |
-| **inherited** (继承旧号 DNA) | 想把自己公众号现有排版风格复现为可复用主题 | 提供 1–3 篇旧文 HTML + (可选) DNA 表 |
+| **modern** (全新设计) | 想要与现有主题完全不同的视觉风格 | 填写 `theme-brief-template.md` |
+| **classic** (继承旧号 DNA) | 想把自己公众号现有排版风格复现为可复用主题 | 提供 1–3 篇旧文 HTML + (可选) DNA 表 |
 
 两条路径都以 `docs/wechat-render/references/themes/<name>.html` 为产出, 并需要登记到 3 处配置文件。
 
@@ -24,15 +24,15 @@
 **Step 1 — 说出路径和主题名**
 
 ```
-/new-theme warm-ink fresh humanist
+/new-theme warm-ink modern humanist
 ```
 
-含糊时 skill 会主动追问: 路径 (fresh / inherited)、名字 (kebab-case)、基调 (humanist / tech)。
+含糊时 skill 会主动追问: 路径 (modern / classic)、名字 (kebab-case)、基调 (humanist / tech)。
 
 **Step 2 — 给输入**
 
-- **fresh 路径**: skill 引导你逐项回答 brief (参考刊物 / 字体倾向 / 配色情绪 / 装饰语言 / 信息密度), 或直接粘贴填好的 `docs/wechat-render/references/theme-brief-template.md`。
-- **inherited 路径**: 提供 1–3 篇旧公众号文章 HTML (本地路径或直接粘贴), 也可附上按 `docs/wechat-render/references/style-dna-extracted.md` 提取好的 DNA 表。
+- **modern 路径**: skill 引导你逐项回答 brief (参考刊物 / 字体倾向 / 配色情绪 / 装饰语言 / 信息密度), 或直接粘贴填好的 `docs/wechat-render/references/theme-brief-template.md`。
+- **classic 路径**: 提供 1–3 篇旧公众号文章 HTML (本地路径或直接粘贴), 也可附上按 `docs/wechat-render/references/style-dna-extracted.md` 提取好的 DNA 表。
 
 **Step 3 — theme-designer 产 HTML**
 
@@ -58,9 +58,9 @@ skill 在主会话自动完成 3 处登记 (详见第 3 节)。
 
 ### Step A — 准备设计输入
 
-**fresh 路径**: 按 `docs/wechat-render/references/theme-brief-template.md` 填写一份完整的主题设计 brief。字段包括: 主题名 (kebab-case)、基调 tone、参考刊物、字体倾向、配色情绪、装饰语言、信息密度。
+**modern 路径**: 按 `docs/wechat-render/references/theme-brief-template.md` 填写一份完整的主题设计 brief。字段包括: 主题名 (kebab-case)、基调 tone、参考刊物、字体倾向、配色情绪、装饰语言、信息密度。
 
-**inherited 路径**: 准备好 1–3 篇旧公众号文章 HTML (完整 inline-styled 版), 并按 `docs/wechat-render/references/style-dna-extracted.md` 提取 4 个维度的 DNA:
+**classic 路径**: 准备好 1–3 篇旧公众号文章 HTML (完整 inline-styled 版), 并按 `docs/wechat-render/references/style-dna-extracted.md` 提取 4 个维度的 DNA:
 - 基础排版 (字号 / 行高 / 字距 / 对齐 / 边距)
 - 招牌色 (主强调色 / 次要文字色 / 分割线 / 卡片底色)
 - 标志性组件 (H2 样式 / 引用块 / 签名形式 / AI 声明卡 / 出处块)
@@ -69,11 +69,11 @@ skill 在主会话自动完成 3 处登记 (详见第 3 节)。
 ### Step B — 产出主题 HTML
 
 把以下材料一起喂给你的 AI:
-1. 你在 Step A 准备的 brief (fresh) 或 DNA + 旧文 (inherited)
+1. 你在 Step A 准备的 brief (modern) 或 DNA + 旧文 (classic)
 2. `docs/wechat-render/references/wechat-html-constraints.md` (公众号 HTML 硬约束)
 3. 对应的 design brief 详尽版:
-   - fresh 路径: `docs/wechat-render/references/design-brief-fresh.md`
-   - inherited 路径: `docs/wechat-render/references/design-brief-inherited.md`
+   - modern 路径: `docs/wechat-render/references/design-brief-modern.md`
+   - classic 路径: `docs/wechat-render/references/design-brief-classic.md`
 
 要求 AI 输出一段完整的 inline-styled HTML, 覆盖:
 - 全套 markdown 元素: `<h1>~<h3>` `<p>` `<strong>` `<em>` `<a>` `<ul>` `<ol>` `<li>` `<blockquote>` `<table>` `<code>` `<pre>` `<hr>` `<img>`
@@ -97,10 +97,10 @@ skill 在主会话自动完成 3 处登记 (详见第 3 节)。
 | `<name>` | <family> | <tone> | <一句话适用场景> |
 ```
 
-示例 (假设新主题叫 `warm-ink`, fresh 家族, humanist 基调):
+示例 (假设新主题叫 `warm-ink`, modern 家族, humanist 基调):
 
 ```
-| `warm-ink` | fresh | humanist | 书信体散文 / 温暖叙事类长文 |
+| `warm-ink` | modern | humanist | 书信体散文 / 温暖叙事类长文 |
 <!-- THEME-TABLE-END: the new-theme skill inserts new theme rows immediately ABOVE this line -->
 ```
 
@@ -180,9 +180,9 @@ skill 在主会话自动完成 3 处登记 (详见第 3 节)。
 
 ---
 
-## 4. Worked example: inherited 家族 DNA 路径
+## 4. Worked example: classic 家族 DNA 路径
 
-本仓库的 `inherited-*` 两个主题是按 inherited 路径设计的示例, 说明「DNA 路径长什么样」。
+本仓库的 `classic-*` 两个主题是按 classic 路径设计的示例, 说明「DNA 路径长什么样」。
 
 **输入**: 作者旧公众号文章的 inline-styled HTML (共 3 篇), 提取到的风格 DNA 包括:
 
@@ -194,9 +194,9 @@ skill 在主会话自动完成 3 处登记 (详见第 3 节)。
 | 签名形式 | 文末右对齐 + `■` 实心方块 Unicode 装饰 |
 | 出处块底色 | `rgb(245, 245, 245)` 浅灰 |
 
-**产出路径**: 两个主题按 humanist / tech 基调分开打磨, 分别存为 `inherited-humanist.html` 和 `inherited-tech.html`。
+**产出路径**: 两个主题按 humanist / tech 基调分开打磨, 分别存为 `classic-humanist.html` 和 `classic-tech.html`。
 
-**查看**: 打开 `docs/wechat-render/references/themes/inherited-tech.html` 可以看到完整的 HTML 样本; 对应的 DNA 提取方法见 `docs/wechat-render/references/style-dna-extracted.md` 的 Worked example 节。
+**查看**: 打开 `docs/wechat-render/references/themes/classic-tech.html` 可以看到完整的 HTML 样本; 对应的 DNA 提取方法见 `docs/wechat-render/references/style-dna-extracted.md` 的 Worked example 节。
 
 ---
 
