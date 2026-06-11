@@ -28,7 +28,7 @@ ai_disclosure:                           # 可选（见 §B-1）
 |---|---|---|---|
 | `title` | ✅ | 仅用于本地归档（公众号编辑器另填） | |
 | `theme` | ✅ | 见 §C 选型 | 也可在 Claude 对话里口头指定 |
-| `signature` | 否（默认 true） | true → 文末渲染右对齐签名灰线 | 不需要签名时设 `false` |
+| `signature` | 否（默认用 config 署名） | `true`/省略 → 用 `config.md` 默认署名；**字符串 → 用作本篇署名名**（覆盖 config）；`false` → 不渲染签名 | 默认名来自 `config.md` 的 `signature:`，每篇可 frontmatter 覆盖 |
 | `sources` | 否 | 文末渲染"想法出处"块 | 数组，每项一条出处 |
 | `sources_note` | 否 | sources 块的尾注小字 | 默认 `*注：` 谦逊语气 |
 | `ai_disclosure` | 否 | 文末渲染 AI 协作声明卡 | 见 §B-1 触发条件 |

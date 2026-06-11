@@ -27,7 +27,7 @@ Read `<markdown_path>` 前 ~40 行 (frontmatter 部分)。
 - [ ] frontmatter 存在 (文件以 `---` 开头, 第二个 `---` 结束)
 - [ ] `title` 字段存在且非空
 - [ ] `theme` 字段存在、非空, 且存在对应的 reference 文件 `docs/wechat-render/references/themes/<theme>.html` (用 Glob/读目录确认; 这样自动支持用 new-theme 新造的主题, 不写死 4 个)
-- [ ] (如有) `signature` 是 `true` / `false` boolean
+- [ ] (如有) `signature` 是 boolean (`true` / `false`) **或非空字符串** (per-article 署名名, 覆盖 `config.md` 默认; 见 system-prompt — frontmatter `signature: <name>` 是合法的名字覆盖, 不要把字符串判成 invalid)
 - [ ] (如有) `sources` 是数组, 每项非空字符串
 - [ ] (如有) `ai_disclosure.model` 非空, `ai_disclosure.prompts` 是非空数组
 - [ ] YAML 语法基本有效 (无明显缩进错误 / 引号不闭合 / `:` 后缺空格)
@@ -57,7 +57,7 @@ Grep 全文:
 - [ ] 所有 `[文字](url)` 链接 url 不是 `#` / `xxx` / `TODO` / 空 (Critical)
 - [ ] 所有 `![](src)` 图片 src 要么:
   - 真实路径 (含 `/` 或 `\` 或 以 `http` 开头)
-  - 或合法 image placeholder `待补图` (与文末 `AI 使用人数分布图` 占位风格一致, 是项目约定)
+  - 或合法 image placeholder `待补图` (图尚未就位时的占位约定, 会渲染为 broken-image + caption 保留位置)
 - [ ] 不允许 src 为空 / src 是 `TODO` / src 是 `xxx` (Critical)
 
 ### E. 中文段落标点全角化
