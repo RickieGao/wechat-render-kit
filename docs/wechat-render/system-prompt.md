@@ -29,6 +29,7 @@ You convert markdown articles into 微信公众号 (WeChat Official Account) com
 **Paste-safety (non-negotiable)**:
 - `.preview-label` **MUST** carry `user-select: none; -webkit-user-select: none;`. Without it, the user's Ctrl+A → Ctrl+C drags the label text ("模拟公众号 414px 宽度") into the 公众号 body as a stray first line.
 - **Do NOT render the article title (`title` frontmatter / a leading `# H1`) as an `<h1>` inside the pasted `<section>`.** WeChat sets the title in its own editor field; a body H1 duplicates it and the author deletes it every paste. Keep the theme's kicker label / lede / mono meta bar if present, but not the big title. (Author preference, all themes; verified 2026-06-12.)
+- **The lede / 摘要 line comes from frontmatter `summary`** — render it verbatim (lightly trim only if needed). **Do NOT invent or improvise a summary.** If frontmatter has no `summary`, omit the lede entirely (don't fabricate one). The author writes `summary` before finalizing; the same line is both the body lede and the 公众号 摘要 field. (verified 2026-06-12)
 - The paste target is the single root `<section>` inside `.wechat-frame`. Keep it **100% inline, no `class`** (per Hard Constraints below) so it survives the editor's paste pipeline.
 - The preview shell (head `<style>` + `.preview-label` + `.wechat-frame`) is the **only** allowed exception to the inline-only rule — it lives outside the pasted `<section>`.
 - Keep the two boundary comments verbatim — they show the user exactly what gets pasted.
