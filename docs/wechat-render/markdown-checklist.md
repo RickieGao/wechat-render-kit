@@ -9,6 +9,7 @@
 ```yaml
 ---
 title: 总结2025-财务篇（理财部分）        # 必填
+summary: 一句话讲清这篇在说什么            # 建议必填（≤120 字；正文 lede + 公众号摘要栏）
 theme: classic-tech                    # 必填（4 选 1，见 §C）
 signature: true                          # 可省，默认 true
 sources:                                 # 可选（见 §B-2）
@@ -27,6 +28,7 @@ ai_disclosure:                           # 可选（见 §B-1）
 | 字段 | 必填 | 触发 | 备注 |
 |---|---|---|---|
 | `title` | ✅ | 仅用于本地归档（公众号编辑器另填） | |
+| `summary` | 建议必填 | 渲染为正文 lede + 发布填公众号摘要栏 | ≤120 字；**终稿前写好，别留给渲染器即兴**；缺则渲染器不出 lede |
 | `theme` | ✅ | 见 §C 选型 | 也可在 Claude 对话里口头指定 |
 | `signature` | 否（默认用 config 署名） | `true`/省略 → 用 `config.md` 默认署名；**字符串 → 用作本篇署名名**（覆盖 config）；`false` → 不渲染签名 | 默认名来自 `config.md` 的 `signature:`，每篇可 frontmatter 覆盖 |
 | `sources` | 否 | 文末渲染"想法出处"块 | 数组，每项一条出处 |
