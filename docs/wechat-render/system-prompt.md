@@ -28,6 +28,7 @@ You convert markdown articles into 微信公众号 (WeChat Official Account) com
 
 **Paste-safety (non-negotiable)**:
 - `.preview-label` **MUST** carry `user-select: none; -webkit-user-select: none;`. Without it, the user's Ctrl+A → Ctrl+C drags the label text ("模拟公众号 414px 宽度") into the 公众号 body as a stray first line.
+- **Do NOT render the article title (`title` frontmatter / a leading `# H1`) as an `<h1>` inside the pasted `<section>`.** WeChat sets the title in its own editor field; a body H1 duplicates it and the author deletes it every paste. Keep the theme's kicker label / lede / mono meta bar if present, but not the big title. (Author preference, all themes; verified 2026-06-12.)
 - The paste target is the single root `<section>` inside `.wechat-frame`. Keep it **100% inline, no `class`** (per Hard Constraints below) so it survives the editor's paste pipeline.
 - The preview shell (head `<style>` + `.preview-label` + `.wechat-frame`) is the **only** allowed exception to the inline-only rule — it lives outside the pasted `<section>`.
 - Keep the two boundary comments verbatim — they show the user exactly what gets pasted.
@@ -140,7 +141,7 @@ Beyond standard markdown elements, the reference HTMLs demonstrate these decorat
 **Universal structural primitives** (almost every article):
 - Section title (H2) — primary visual rhythm
 - Quote block — left border + slight indent
-- Image caption — italic muted line below image
+- Image caption — **center-aligned**; **drop any `FIG.0N` label** (the author finds `FIG.01` / `FIG.02` redundant); keep a single leading `/` mono marker + caption text, e.g. `/　左：源稿　/　右：渲染后`. Humanist themes keep their italic-muted caption but also **center-aligned**. (Author preference, verified 2026-06-12.)
 - Signature — right-aligned, at article end
 - Sources block — muted card with footnote-style attributions (if frontmatter has `sources`)
 - AI disclosure — card with model name + prompt(s) (if frontmatter has `ai_disclosure`)
